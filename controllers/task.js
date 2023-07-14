@@ -45,12 +45,28 @@ export const getMyTask = async (req, res, next) => {
 export const updateTask = async (req, res, next) => {
     try {
         const taskId = req.params.id;
+        const {title,description} = req.body
+
 
         const task = await Task.findById(taskId);
-    
-    
+
+        if(!task){
+            return res.status(404).json({
+                succcess:false,
+                message:"task not found",
+
+            })
+        }
+
         task.isCompleted = !task.isCompleted;
-        console.log(task.isCompleted);
+
+        if(title){
+            task.title = title
+        }
+        if(description){
+            task.description = description
+        }
+    
     
         await task.save();
     
