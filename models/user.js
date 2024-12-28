@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-
+//database schena for schema
 const schema = new mongoose.Schema({
     name:String,
     email:{
