@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import taskRouter from "./routes/task.js"
 import { errorMiddleWare } from "./middleware/error.js";
 import cors from "cors"
-
+//using all functions here
 config({
     path: "./data/.env"
 });
