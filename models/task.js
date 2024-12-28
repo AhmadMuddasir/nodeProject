@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-
+//database schema written here
 const schema = new mongoose.Schema({
     title:String,
     description:{
